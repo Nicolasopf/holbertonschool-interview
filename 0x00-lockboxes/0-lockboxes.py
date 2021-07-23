@@ -15,7 +15,7 @@ def canUnlockAll(boxes):
             try:
                 opened.update(boxes[num])
             except:
-                continue
+                pass
         nums.update(opened)
 
     if len(opened) != len(boxes):
