@@ -12,11 +12,14 @@ def canUnlockAll(boxes):
     while counter < len(opened):
         counter = len(opened)
         for num in nums:
-            if num < len(boxes):
+            try:
                 opened.update(boxes[num])
+            except:
+                pass
         nums.update(opened)
 
-    if len(opened) != len(boxes):
-        return False
+    for i in range(len(boxes)):
+        if i not in opened:
+            return False
 
     return True
