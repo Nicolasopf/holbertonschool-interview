@@ -7,11 +7,15 @@ def canUnlockAll(boxes):
     nums = set(boxes[0])
     opened = {0}
     counter = 0
+    boxes_len = len(boxes)
 
     while counter < len(opened):
         counter = len(opened)
         for num in nums:
-            opened.update(boxes[num])
+            try:
+                opened.update(boxes[num])
+            except:
+                continue
         nums.update(opened)
 
     if len(opened) != len(boxes):
