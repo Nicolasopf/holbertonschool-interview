@@ -1,5 +1,12 @@
 #include "binary_trees.h"
 
+/**
+ * binary_tree_node - Add a new node in a binary tree.
+ * @parent: Where to put the node.
+ * @value: Value of node.
+ * Return: New node or NULL if error
+ */
+
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 {
 	binary_tree_t *new = NULL;
