@@ -1,0 +1,1 @@
+# Minimum comun divisor exercise
