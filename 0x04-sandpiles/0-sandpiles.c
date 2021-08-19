@@ -85,52 +85,25 @@ void check_sandpile(int grid[3][3])
 			{
 				/* UP, if index 0, row-1 would be -1 */
 				if (row != 0)
-				{
-					if (grid[row][column] - grid[row - 1][column] >= 3
-						|| grid[row - 1][column] < 3)
-					{
-						tmp[row - 1][column] += 1;
-						discount++;
-					}
-				}
+					tmp[row - 1][column] += 1, discount++;
 				else
 					discount++;
 
 				/* DOWN */
 				if (row != 2)
-				{
-					if (grid[row][column] - grid[row + 1][column] >= 3
-						|| grid[row + 1][column] < 3)
-					{
-						tmp[row + 1][column] += 1;
-						discount++;
-					}
-				}
+					tmp[row + 1][column] += 1, discount++;
 				else
 					discount++;
 
 				/* LEFT */
 				if (column != 0)
-				{
-					if (grid[row][column] - grid[row][column - 1] >= 3
-						|| grid[row][column - 1] < 3)
-					{
-						tmp[row][column - 1] += 1;
-						discount++;
-					}
-				}
+					tmp[row][column - 1] += 1, discount++;
 				else
 					discount++;
 
+				/* RIGHT */
 				if (column != 2)
-				{
-					if (grid[row][column] - grid[row][column + 1] >= 3
-						|| grid[row][column + 1] < 3)
-					{
-						tmp[row][column + 1] += 1;
-						discount++;
-					}
-				}
+					tmp[row][column + 1] += 1, discount++;
 				else
 					discount++;
 
