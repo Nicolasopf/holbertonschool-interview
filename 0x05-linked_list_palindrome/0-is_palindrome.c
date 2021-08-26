@@ -10,7 +10,7 @@
 
 int is_palindrome(listint_t **head)
 {
-	int nums[1024], index, j;
+	int nums[10240], index, j;
 	listint_t *tmp = *head;
 
 	if (*head)
