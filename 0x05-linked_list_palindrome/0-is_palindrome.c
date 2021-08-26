@@ -13,18 +13,17 @@ int is_palindrome(listint_t **head)
 	int nums[1024], index, j;
 	listint_t *tmp = *head;
 
-	if (!*head)
-		return (1);
-
-	for (index = 0; tmp; index++)
+	if (*head)
 	{
-		nums[index] = tmp->n;
-		tmp = tmp->next;
+		for (index = 0; tmp; index++)
+		{
+			nums[index] = tmp->n;
+			tmp = tmp->next;
+		}
+		for (j = 0; j < index; j++)
+			if (nums[j] != nums[index - j - 1])
+				return (0);
 	}
-
-	for (j = 0; j < index; j++)
-		if (nums[j] != nums[index - j - 1])
-			return (0);
 
 	return (1);
 }
